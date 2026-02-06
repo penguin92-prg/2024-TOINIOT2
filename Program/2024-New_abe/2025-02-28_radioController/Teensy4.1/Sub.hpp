@@ -11,6 +11,7 @@ public:
   std::string str = "";
   void begin();
   void read();
+  void send(std::string str);
   void kick();
 };
 

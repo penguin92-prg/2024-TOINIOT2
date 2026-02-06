@@ -24,6 +24,14 @@ void Sub::read(){
 }
 
 
+void Sub::send(std::string str){
+  str += "_";
+  Serial7.print(str.c_str());
+
+  return;
+}
+
+
 void Sub::kick(){
   bool ready = millis()-kicked_timer > INTERVAL;
 

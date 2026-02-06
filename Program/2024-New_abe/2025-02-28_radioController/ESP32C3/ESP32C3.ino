@@ -1,5 +1,8 @@
+#include <Adafruit_NeoPixel.h>
+
 // central(attacker)
 
+#include <string>
 #include <Arduino.h>
 
 #include <BLEDevice.h>
@@ -9,6 +12,9 @@
 
 
 #define KICKER_PIN D3
+#define NEOPIXEL_NUM 16
+
+Adafruit_NeoPixel strip(NEOPIXEL_NUM, D10, NEO_GRB + NEO_KHZ800);
 
 
 // BLE
@@ -86,6 +92,11 @@ void setup() {
   service -> start();
 
   central -> getAdvertising() -> start();
+
+
+  // neopixel
+  strip.begin();
+  strip.setBrightness(192);
 }
 
 
@@ -94,13 +105,35 @@ void setup() {
 void loop() {
   // kicker
   static uint32_t kicker_timer = 0;
-  while(Serial1.available()){
-    if((char)Serial1.read() == 'k'){
-      if(millis()-kicker_timer > 6000){
-        kicker_timer = millis();
+  static double ball_dir = 0;
+
+  // 切り捨てる
+  if(Serial1.available()){
+
+    while(Serial1.available() > 12){
+      char c = (char)Serial1.read();
+      if(c == 'k'){
+        if(millis()-kicker_timer > 6000){
+          kicker_timer = millis();
+        }
+      }
+
+    }
+    while(Serial1.available() && Serial1.read() != '_'){}
+
+    // 読み出し
+    std::string str = "";
+    for(int i=0;i<10;i++){
+      if(Serial1.available()){
+        char c = (char)Serial1.read();
+        str += c;
+        Serial.print(c);
       }
     }
+    ball_dir = std::stod(str);
+
   }
+  Serial.println();
 
   if(millis()-kicker_timer < 60){
     digitalWrite(KICKER_PIN, HIGH);
@@ -141,4 +174,17 @@ void loop() {
   }
 
   if(connected && !prev_connected) prev_connected = connected;
+
+
+  // neopixel
+  static int count = 0;
+  for(int pin = 0; pin < NEOPIXEL_NUM; pin++){
+    // if(count % 2 == 0){
+    //   strip.setPixelColor(pin, 0, 0, 0);
+    // }else{
+    // }
+    strip.setPixelColor(pin, 255, 64, 0);
+    strip.show();
+  }
+  count++;
 }

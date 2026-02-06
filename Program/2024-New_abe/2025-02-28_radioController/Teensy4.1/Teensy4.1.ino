@@ -2,6 +2,8 @@
 // Teensy4.1
 // 2024-02-23
 
+#include <Arduino.h>
+
 #include <sstream>
 #include <cmath>
 #include<vector>
@@ -9,12 +11,14 @@
 
 #include <Wire.h>
 
+#include "ball.hpp"
 #include "dir.hpp"
 #include "Display.hpp"
 #include "Motor.hpp"
 #include "Sub.hpp"
 #include "UI.hpp"
 
+Ball ball;
 Dir dir;
 Display display;
 Motor motor;
@@ -35,6 +39,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println("2024-12-24 TOINIOT2 kansai");
 
+  ball.begin();
   display.begin();
   // dir.begin();
   motor.begin();
@@ -91,6 +96,7 @@ int safeStoi(const std::string& str, int defaultValue = 0) {
 
 
 void loop() {
+  ball.read();
   // dir.read();
   sub.read();
   ui.read();
@@ -141,6 +147,9 @@ void loop() {
 
   // display.addValiables("x:"+to_string(x), nullptr);
   // display.addValiables("y:"+to_string(y), nullptr);
+
+
+  sub.send(to_string(ball.dir));
 
 
 
