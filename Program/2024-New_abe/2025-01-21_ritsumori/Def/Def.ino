@@ -46,11 +46,11 @@ void setup() {
   Serial.println("2024-12-24 TOINIOT2 kansai def");
 
   ball.begin();
-  camera.begin();
+  // camera.begin();
   display.begin();
-  dir.begin();
+  // dir.begin();
   // kicker.begin();
-  line.begin(115200);
+  // line.begin(115200);
   motor.begin();
   sub.begin();
   ui.begin();
@@ -58,6 +58,10 @@ void setup() {
 
   // calibration
   uint8_t system=0, gyro=0, accel=0, mag=0;
+  system=3;
+  gyro=3;
+  accel=3;
+  mag=3;
   while(system<3 || gyro<3 || mag<3){
     dir.calibration(&system, &gyro, &accel, &mag);
     digitalWrite(LED_BUILTIN, HIGH);
@@ -96,10 +100,10 @@ bool is_display_on = true;
 
 void loop() {
   ball.read();
-  camera.read();
-  dir.read();
-  line.read();
-  sub.read();
+  // camera.read();
+  // dir.read();
+  // line.read();
+  // sub.read();
   ui.read();
 
 static float _min = 1.0, _max = 2.5;
@@ -485,5 +489,5 @@ static float _min = 1.0, _max = 2.5;
 
 
   motor.avr();
-  motor.write();
+  // motor.write();
 }

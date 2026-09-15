@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GitHub\\2024-TOINIOT2\\Program\\2024-New_abe\\2025-02-28_radioController\\BluetoothLE\\cppwinrt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50A02DC6-3A35-5378-827A-313C51939F09}|BluetoothLE.vcxproj|C:\\GitHub\\2024-TOINIOT2\\Program\\2024-New_abe\\2025-02-28_radioController\\BluetoothLE\\SharedContent\\cppwinrt\\MainPage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.cpp",
+              "DocumentMoniker": "C:\\GitHub\\2024-TOINIOT2\\Program\\2024-New_abe\\2025-02-28_radioController\\BluetoothLE\\SharedContent\\cppwinrt\\MainPage.cpp",
+              "RelativeDocumentMoniker": "..\\SharedContent\\cppwinrt\\MainPage.cpp",
+              "ToolTip": "C:\\GitHub\\2024-TOINIOT2\\Program\\2024-New_abe\\2025-02-28_radioController\\BluetoothLE\\SharedContent\\cppwinrt\\MainPage.cpp",
+              "RelativeToolTip": "..\\SharedContent\\cppwinrt\\MainPage.cpp",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAowKsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-11T03:19:56.034Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

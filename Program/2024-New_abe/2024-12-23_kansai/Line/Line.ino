@@ -152,13 +152,9 @@ void loop(){
   Serial.println();
 
 
-<<<<<<< Updated upstream
   delay(4);
   // delay(3);
-=======
   // delay(4);
-  delay(100);
->>>>>>> Stashed changes
   // static uint32_t time = 0;
   // uint32_t t = millis() - time;
   // Serial.print(" ");

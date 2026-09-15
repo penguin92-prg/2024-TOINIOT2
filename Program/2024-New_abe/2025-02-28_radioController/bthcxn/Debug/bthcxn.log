@@ -1,4 +1,0 @@
-﻿cl : コマンド ライン  warning D9035: オプション 'Gm' の使用は現在推奨されていません。今後のバージョンからは削除されます。
-  bthcxn.cpp
-bthcxn.obj : warning LNK4075: /EDITANDCONTINUE は /SAFESEH の指定によって無視されます。
-  bthcxn.vcxproj -> C:\GitHub\2024-TOINIOT2\Program\2024-New_abe\2025-02-28_radioController\bthcxn\Debug\bthcxn.exe

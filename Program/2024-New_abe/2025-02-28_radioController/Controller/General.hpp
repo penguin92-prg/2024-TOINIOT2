@@ -13,9 +13,11 @@
 #define CENTER_X (WINDOW_W/2)
 #define CENTER_Y (WINDOW_H/2)
 
+extern int font_size;
 
 // color
 extern unsigned int red;
 extern unsigned int dark_red;
 extern unsigned int blue;
+extern unsigned int gray;
 extern unsigned int white;
